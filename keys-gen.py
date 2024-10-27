@@ -44,6 +44,6 @@ if __name__ == '__main__':
         f.write(gpg.export_keys(key.fingerprint))
 
     with open(f'{output_dir_path}/private.asc', 'w') as f:
-        f.write(gpg.export_keys(key.fingerprint, True, passphrase="secure_passphrase"))
+        f.write(gpg.export_keys(key.fingerprint, True, passphrase=password))
 
     print(f'Saved to: "{os.path.abspath(output_dir_path)}"')
