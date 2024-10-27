@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
     key = gpg.gen_key(input_data)
 
-    output_dir_path = f'{args.name} <{args.email}>'
+    output_dir_path = f'{args.email}'
 
     if not os.path.isdir(output_dir_path):
         os.mkdir(output_dir_path)
