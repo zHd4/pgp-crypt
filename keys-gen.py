@@ -28,11 +28,7 @@ if __name__ == '__main__':
 
     print('Generating...')
 
-    input_data = gpg.gen_key_input(
-        name_email=args.email,
-        passphrase=password
-    )
-
+    input_data = gpg.gen_key_input(name_email=args.email, passphrase=password)
     key = gpg.gen_key(input_data)
 
     output_dir_path = f'{args.email}'
