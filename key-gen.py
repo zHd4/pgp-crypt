@@ -8,12 +8,13 @@ if __name__ == '__main__':
 
     parser.add_argument("name", type=str, help="Your name")
     parser.add_argument("email", type=str, help="Email")
-    parser.add_argument("key_size", type=str, help="Key size")
+    parser.add_argument("key_size", type=int, help="Key size")
 
     args = parser.parse_args()
 
-    key = pgpy.PGPKey.new(PubKeyAlgorithm.RSAEncryptOrSign, 2048)
-    uid = pgpy.PGPUID.new("User Name", email="user@example.com")
+    key = pgpy.PGPKey.new(PubKeyAlgorithm.RSAEncryptOrSign, args.key_size)
+    uid = pgpy.PGPUID.new(args.name, email=args.email)
+
     key.add_uid(uid, usage={KeyFlags.EncryptCommunications, KeyFlags.EncryptStorage},
                 hashes=[HashAlgorithm.SHA256], ciphers=[SymmetricKeyAlgorithm.AES256],
                 compression=[CompressionAlgorithm.ZLIB])
