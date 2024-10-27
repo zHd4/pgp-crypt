@@ -13,6 +13,8 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
+    print('Generating...')
+
     key = pgpy.PGPKey.new(PubKeyAlgorithm.RSAEncryptOrSign, args.key_size)
     uid = pgpy.PGPUID.new(args.name, email=args.email)
 
@@ -30,3 +32,5 @@ if __name__ == '__main__':
 
     with open(f'{output_dir_path}/public.asc', 'w') as f:
         f.write(str(key.pubkey))
+
+    print(f'Saved to: "{os.path.abspath(output_dir_path)}"')
