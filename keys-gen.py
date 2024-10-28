@@ -42,4 +42,4 @@ with open(f'{output_dir_path}/public.asc', 'w') as f:
 with open(f'{output_dir_path}/private.asc', 'w') as f:
     f.write(gpg.export_keys(key.fingerprint, True, passphrase=key_password))
 
-print(f'Saved to: "{os.path.abspath(output_dir_path)}"')
+print(f'Saved to: {os.path.abspath(output_dir_path)}')
