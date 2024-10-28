@@ -23,7 +23,7 @@ if __name__ == '__main__':
     password = get_password()
 
     if password is None:
-        print('Passwords don`t match')
+        print("Passwords don't match")
         exit()
 
     print('Generating...')
