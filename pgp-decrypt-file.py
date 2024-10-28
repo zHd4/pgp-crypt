@@ -15,11 +15,11 @@ gpg = gnupg.GPG()
 
 if args.output_path is not None:
     if os.path.isdir(args.output_path):
-        output_path = os.path.join(args.output_path, os.path.basename(args.input_file_path) + '.gpg')
+        output_path = os.path.join(args.output_path, os.path.basename(args.encrypted_file_path) + '.gpg')
     else:
         output_path = args.output_path
 else:
-    output_path = args.input_file_path + '.gpg'
+    output_path = args.encrypted_file_path + '.gpg'
 
 print('Importing key...')
 
