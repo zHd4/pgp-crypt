@@ -1,5 +1,4 @@
 import argparse
-import os
 
 import gnupg
 
@@ -15,7 +14,7 @@ if __name__ == '__main__':
     gpg = gnupg.GPG()
 
     if args.output_path is None:
-        output_path = os.path.basename(args.input_file_path) + '.gpg'
+        output_path = args.input_file_path + '.gpg'
     else:
         output_path = args.output_path
 
