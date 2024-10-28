@@ -1,4 +1,5 @@
 import argparse
+import os
 
 import gnupg
 
@@ -14,10 +15,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
     gpg = gnupg.GPG()
 
-    if args.output_path is None:
-        output_path = args.input_file_path + '.gpg'
+    if args.output_path is not None:
+        if os.path.isdir(args.output_path):
+            output_path = os.path.join(args.output_path, os.path.basename(args.input_file_path) + '.gpg')
+        else:
+            output_path = args.output_path
     else:
-        output_path = args.output_path
+        output_path = args.input_file_path + '.gpg'
 
     with open(args.public_key_path) as file:
         gpg.import_keys(file.read())
