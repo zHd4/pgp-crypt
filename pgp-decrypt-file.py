@@ -1,5 +1,6 @@
 import argparse
 import os
+import pathlib
 from getpass import getpass
 
 import gnupg
@@ -13,13 +14,13 @@ parser.add_argument('-o', '--output-path', type=str, help='Output path')
 args = parser.parse_args()
 gpg = gnupg.GPG()
 
+output_path = pathlib.Path(args.encrypted_file_path).with_suffix('')
+
 if args.output_path is not None:
     if os.path.isdir(args.output_path):
-        output_path = os.path.join(args.output_path, os.path.basename(args.encrypted_file_path) + '.gpg')
+        output_path = os.path.join(args.output_path, os.path.basename(output_path))
     else:
         output_path = args.output_path
-else:
-    output_path = args.encrypted_file_path + '.gpg'
 
 print('Importing key...')
 
