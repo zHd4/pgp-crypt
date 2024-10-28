@@ -23,6 +23,7 @@ if __name__ == '__main__':
         gpg.import_keys(file.read())
 
     with open(args.input_file_path, 'rb') as file:
+        print('Encrypting...')
         status = gpg.encrypt_file(file, recipients=[args.email], output=output_path, armor=args.armor)
 
     if status.ok:
