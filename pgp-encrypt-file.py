@@ -3,7 +3,7 @@ import os
 
 import gnupg
 
-parser = argparse.ArgumentParser(description='PGP encryption tool')
+parser = argparse.ArgumentParser(description='PGP file encryption tool')
 
 parser.add_argument('email', type=str, help="Recipient's email")
 parser.add_argument('public_key_path', type=str, help='Path to public key')
@@ -32,4 +32,4 @@ with open(args.input_file_path, 'rb') as file:
 if status.ok:
     print(f'File encrypted! Saved to: {output_path}')
 else:
-    print(f'An error occurred: {status.status}')
+    print(f'An error occurred: {status.result}')
