@@ -5,7 +5,7 @@ from getpass import getpass
 
 import gnupg
 
-parser = argparse.ArgumentParser(description='PGP decryption tool')
+parser = argparse.ArgumentParser(description='PGP file decryption tool')
 
 parser.add_argument('private_key_path', type=str, help='Path to private key')
 parser.add_argument('encrypted_file_path', type=str, help='Path to encrypted file')
@@ -36,4 +36,4 @@ with open(args.encrypted_file_path, 'rb') as file:
 if status.ok:
     print(f'File encrypted! Saved to: {output_path}')
 else:
-    print(f'An error occurred: {status.status}')
+    print(f'An error occurred: {status.result}')
