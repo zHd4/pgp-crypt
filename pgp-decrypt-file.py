@@ -31,9 +31,9 @@ password = getpass('Password: ')
 
 with open(args.encrypted_file_path, 'rb') as file:
     print('Decrypting...')
-    status = gpg.decrypt_file(file, passphrase=password, output=output_path)
+    result = gpg.decrypt_file(file, passphrase=password, output=output_path)
 
-if status.ok:
+if result.ok:
     print(f'File encrypted! Saved to: {output_path}')
 else:
-    print(f'An error occurred: {status.result}')
+    print(f'An error occurred: {result.status}')
