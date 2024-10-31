@@ -27,9 +27,9 @@ with open(args.public_key_path) as file:
 
 with open(args.input_file_path, 'rb') as file:
     print('Encrypting...')
-    status = gpg.encrypt_file(file, recipients=[args.email], output=output_path, armor=args.armor)
+    result = gpg.encrypt_file(file, recipients=[args.email], output=output_path, armor=args.armor)
 
-if status.ok:
+if result.ok:
     print(f'File encrypted! Saved to: {output_path}')
 else:
-    print(f'An error occurred: {status.result}')
+    print(f'An error occurred: {result.status}')
