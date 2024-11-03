@@ -25,6 +25,7 @@ def multiline_input(message: str) -> str:
 
     return '\n'.join(contents)
 
+
 with open(args.key_path, 'r') as file:
     key = file.read()
 
