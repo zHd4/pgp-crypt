@@ -35,7 +35,7 @@ message_text = multiline_input('\nEnter your message '
                                'Ctrl+C to cancel, Enter to finish):\n')
 
 print()
-result = gpg.encrypt(message_text, [args.key])
+result = gpg.encrypt(message_text, [args.email])
 
 if result.ok:
     print(result.data.decode('utf-8'))
