@@ -1,5 +1,4 @@
 import argparse
-import sys
 
 import gnupg
 
@@ -12,22 +11,37 @@ args = parser.parse_args()
 gpg = gnupg.GPG()
 
 
+def multiline_input(message: str) -> str:
+    print(message)
+    contents = []
+
+    while True:
+        try:
+            line = input()
+        except EOFError:
+            break
+
+        contents.append(line)
+
+    return '\n'.join(contents)
+
+
 if args.email is None:
     email = input("Recipient's email: ")
 else:
     email = args.email
 
 if args.key is None:
-    print('Paste your PGP public key here:\n')
-    key = sys.stdin.read()
+    key = multiline_input('Paste your PGP public key here:\n')
 else:
     with open(args.key, 'r') as file:
         key = file.read()
 
 gpg.import_keys(key)
 
-print('\nEnter your message (Ctrl+Enter to move to a new line, Ctrl+C to cancel, Enter to finish):\n')
-message_text = sys.stdin.read()
+message_text = multiline_input('\nEnter your message '
+                               '(Ctrl+Enter to move to a new line, '
+                               'Ctrl+C to cancel, Enter to finish):\n')
 
 print()
 result = gpg.encrypt(message_text, [email])
