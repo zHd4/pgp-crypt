@@ -5,7 +5,7 @@ import gnupg
 parser = argparse.ArgumentParser(description='PGP messages encryption tool')
 
 parser.add_argument('email', type=str, help="Recipient's email")
-parser.add_argument('key', type=str, help='Path to public key')
+parser.add_argument('key_path', type=str, help='Path to public key')
 
 args = parser.parse_args()
 gpg = gnupg.GPG()
@@ -25,7 +25,7 @@ def multiline_input(message: str) -> str:
 
     return '\n'.join(contents)
 
-with open(args.key, 'r') as file:
+with open(args.key_path, 'r') as file:
     key = file.read()
 
 gpg.import_keys(key)
