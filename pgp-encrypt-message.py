@@ -33,6 +33,6 @@ print()
 result = gpg.encrypt(message_text, [email])
 
 if result.ok:
-    print(result.data)
+    print(result.data.decode('utf-8'))
 else:
     print(f'An error occurred: {result.status}')
