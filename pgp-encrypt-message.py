@@ -31,7 +31,7 @@ with open(args.key_path, 'r') as file:
 
 gpg.import_keys(key)
 
-message_text = multiline_input('Enter/Paste your content. Ctrl-D or Ctrl-Z (Windows) to finish.')
+message_text = multiline_input('Enter/Paste your text. Ctrl-D or Ctrl-Z (Windows) to finish.')
 result = gpg.encrypt(message_text, [args.email])
 
 print()
