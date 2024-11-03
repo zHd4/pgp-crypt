@@ -30,11 +30,7 @@ with open(args.key_path, 'r') as file:
 
 gpg.import_keys(key)
 
-message_text = multiline_input('\nEnter your message '
-                               '(Ctrl+Enter to move to a new line, '
-                               'Ctrl+C to cancel, Enter to finish):\n')
-
-print()
+message_text = multiline_input('Enter/Paste your content. Ctrl-D or Ctrl-Z (Windows) to finish.')
 result = gpg.encrypt(message_text, [args.email])
 
 if result.ok:
