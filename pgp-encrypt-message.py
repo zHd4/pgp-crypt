@@ -34,6 +34,8 @@ gpg.import_keys(key)
 message_text = multiline_input('Enter/Paste your content. Ctrl-D or Ctrl-Z (Windows) to finish.')
 result = gpg.encrypt(message_text, [args.email])
 
+print()
+
 if result.ok:
     print(result.data.decode('utf-8'))
 else:
