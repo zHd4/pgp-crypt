@@ -28,3 +28,17 @@ positional arguments:
 options:
   -h, --help  show this help message and exit
 ```
+
+<h2>pgp-decrypt-message.py</h2>
+```text
+usage: pgp-decrypt-message.py [-h] email key_path
+
+PGP messages decryption tool
+
+positional arguments:
+  email       Recipient's email
+  key_path    Path to private key
+
+options:
+  -h, --help  show this help message and exit
+```
