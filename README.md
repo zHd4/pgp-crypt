@@ -4,6 +4,7 @@
 <h2>Usages</h2>
 
 <h3>pgp-keys-gen.py</h3>
+
 ```text
 usage: pgp-keys-gen.py [-h] email key_size
 
@@ -18,6 +19,7 @@ options:
 ```
 
 <h3>pgp-encrypt-message.py</h3>
+
 ```text
 usage: pgp-encrypt-message.py [-h] email key_path
 
@@ -32,6 +34,7 @@ options:
 ```
 
 <h3>pgp-decrypt-message.py</h3>
+
 ```text
 usage: pgp-decrypt-message.py [-h] email key_path
 
@@ -46,6 +49,7 @@ options:
 ```
 
 <h3>pgp-encrypt-file.py</h3>
+
 ```text
 usage: pgp-encrypt-file.py [-h] [-o OUTPUT_PATH] [-a] email public_key_path input_file_path
 
@@ -64,6 +68,7 @@ options:
 ```
 
 <h3>pgp-decrypt-file.py</h3>
+
 ```text
 usage: pgp-decrypt-file.py [-h] [-o OUTPUT_PATH] private_key_path encrypted_file_path
 
