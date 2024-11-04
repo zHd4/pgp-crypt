@@ -1,7 +1,9 @@
 <h1>pgp-crypt</h1>
 <p>Collection of PGP Python scripts</p>
 
-<h2>pgp-keys-gen.py</h2>
+<h2>Usages</h2>
+
+<h3>pgp-keys-gen.py</h3>
 ```text
 usage: pgp-keys-gen.py [-h] email key_size
 
@@ -15,7 +17,7 @@ options:
   -h, --help  show this help message and exit
 ```
 
-<h2>pgp-encrypt-message.py</h2>
+<h3>pgp-encrypt-message.py</h3>
 ```text
 usage: pgp-encrypt-message.py [-h] email key_path
 
@@ -29,7 +31,7 @@ options:
   -h, --help  show this help message and exit
 ```
 
-<h2>pgp-decrypt-message.py</h2>
+<h3>pgp-decrypt-message.py</h3>
 ```text
 usage: pgp-decrypt-message.py [-h] email key_path
 
@@ -43,7 +45,7 @@ options:
   -h, --help  show this help message and exit
 ```
 
-<h2>pgp-encrypt-file.py</h2>
+<h3>pgp-encrypt-file.py</h3>
 ```text
 usage: pgp-encrypt-file.py [-h] [-o OUTPUT_PATH] [-a] email public_key_path input_file_path
 
@@ -61,7 +63,7 @@ options:
   -a, --armor           Text output
 ```
 
-<h2>pgp-decrypt-file.py</h2>
+<h3>pgp-decrypt-file.py</h3>
 ```text
 usage: pgp-decrypt-file.py [-h] [-o OUTPUT_PATH] private_key_path encrypted_file_path
 
