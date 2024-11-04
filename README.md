@@ -42,3 +42,37 @@ positional arguments:
 options:
   -h, --help  show this help message and exit
 ```
+
+<h2>pgp-encrypt-file.py</h2>
+```text
+usage: pgp-encrypt-file.py [-h] [-o OUTPUT_PATH] [-a] email public_key_path input_file_path
+
+PGP file encryption tool
+
+positional arguments:
+  email                 Recipient's email
+  public_key_path       Path to public key
+  input_file_path       Path to file to be encrypted
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_PATH, --output-path OUTPUT_PATH
+                        Output path
+  -a, --armor           Text output
+```
+
+<h2>pgp-decrypt-file.py</h2>
+```text
+usage: pgp-decrypt-file.py [-h] [-o OUTPUT_PATH] private_key_path encrypted_file_path
+
+PGP file decryption tool
+
+positional arguments:
+  private_key_path      Path to private key
+  encrypted_file_path   Path to encrypted file
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_PATH, --output-path OUTPUT_PATH
+                        Output path
+```
